@@ -6,10 +6,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.UUID;
 
-/**
- * Papel no padrão Factory Method: Creator. Exporta usando o produto criado pela subclasse.
- * O factory method é criarDocumento(); não se trata de uma fábrica com switch.
- */
 public abstract class ExportadorOrdem {
     protected abstract DocumentoOrdem criarDocumento();
 

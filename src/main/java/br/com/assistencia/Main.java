@@ -14,7 +14,6 @@ import java.nio.charset.StandardCharsets;
 import java.time.Clock;
 import java.util.*;
 
-/** Ponto de composição: constrói e injeta as dependências antes de abrir o menu. */
 public final class Main {
     public static void main(String[] args) {
         System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
@@ -25,7 +24,7 @@ public final class Main {
         try (RepositorioArquivo repositorio = new RepositorioArquivo(dados)) {
             AssistenciaFacade assistencia = new AssistenciaFacade(repositorio, Clock.systemDefaultZone(),
                     exportadores, dados.resolve("exportacoes"));
-            assistencia.listar(); // Verifica o arquivo antes de aceitar novas operações.
+            assistencia.listar();
             System.out.println("ASSISTÊNCIA TÉCNICA | Dados locais em: " + dados);
             System.out.println("Pagamento é conferência de recebimento externo. Não há operação bancária.");
             new Terminal(assistencia, politicas, new Scanner(System.in, StandardCharsets.UTF_8)).executar();
@@ -36,7 +35,6 @@ public final class Main {
         }
     }
 
-    /** Papel nos padrões Facade e Builder: Client; lê entradas e apresenta os casos de uso. */
     private static final class Terminal {
         private final AssistenciaFacade assistencia;
         private final Map<Integer, PoliticaPreco> politicas;
@@ -183,7 +181,7 @@ public final class Main {
         private void orcar() throws IOException {
             long numero = numero();
             OrdemServico ordem = assistencia.consultar(numero);
-            ordem.estado().orcar(); // Falha antes de solicitar todos os campos se a etapa não permite orçamento.
+            ordem.estado().orcar();
             String diagnostico = texto("Diagnóstico técnico");
             int dias = inteiro("Validade em dias a partir de hoje (1 a 90)", 1, 90);
             int politica = inteiro("Preço: 1 - Normal | 2 - Campanha 10% somente na mão de obra", 1, 2);
@@ -248,7 +246,7 @@ public final class Main {
                 try {
                     int valor = Integer.parseInt(texto(campo));
                     if (valor >= minimo && valor <= maximo) return valor;
-                } catch (NumberFormatException e) { /* A mensagem abaixo orienta uma nova tentativa. */ }
+                } catch (NumberFormatException e) { }
                 System.out.println("Informe um inteiro entre " + minimo + " e " + maximo + ".");
             }
         }

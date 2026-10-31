@@ -2,7 +2,6 @@ package br.com.assistencia.dominio;
 
 import java.io.Serializable;
 
-/** Dados de contato do responsável pelo atendimento. */
 public record Cliente(String nome, String telefone) implements Serializable {
     public Cliente {
         nome = Validacao.texto(nome, "Nome do cliente");

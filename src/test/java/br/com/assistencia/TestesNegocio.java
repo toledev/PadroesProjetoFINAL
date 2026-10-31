@@ -15,7 +15,6 @@ import java.time.*;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-/** Testes executáveis sem bibliotecas externas, centrados nos riscos de negócio. */
 public final class TestesNegocio {
     private static final LocalDate HOJE = LocalDate.of(2026, 10, 30);
     private static int verificacoes;
@@ -221,7 +220,7 @@ public final class TestesNegocio {
         String roteiro = String.join("\n", "abc", "2", "1", "Ana", "11999999999", "Notebook Dell", "NB-1", "Sem avarias", "Carregador", "Não liga", "s",
                 "4", "1", "Fonte danificada", "7", "2", "1", "2", "Reparo completo", "2",
                 "1", "Fonte", "1", "200", "2", "Instalação e testes", "1", "100", "s",
-                "7", "1", "Técnico", "s", // Sem aprovação: deve rejeitar.
+                "7", "1", "Técnico", "s",
                 "5", "1", "Ana", "s", "7", "1", "Técnico", "s",
                 "8", "1", "Fonte substituída", "Boot e estabilidade", "s",
                 "9", "1", "1", "TRANS-CLI", "290", "s", "10", "1", "Ana", "s",

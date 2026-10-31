@@ -1,6 +1,5 @@
 package br.com.assistencia.padroes.exportacao;
 
-/** Papel no padrão Factory Method: ConcreteProduct, ficha HTML imprimível. */
 public final class DocumentoHtml implements DocumentoOrdem {
     public String extensao() { return ".html"; }
     public String renderizar(String ficha) {

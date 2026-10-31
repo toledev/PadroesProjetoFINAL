@@ -3,7 +3,6 @@ package br.com.assistencia.padroes.orcamento;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-/** Papel no padrão Composite: Component, comum a itens e pacotes de orçamento. */
 public interface ComponenteOrcamento extends Serializable {
     BigDecimal totalPecas();
     BigDecimal totalServicos();

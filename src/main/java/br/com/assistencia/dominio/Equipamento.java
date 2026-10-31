@@ -3,7 +3,6 @@ package br.com.assistencia.dominio;
 import java.io.Serializable;
 import java.util.Locale;
 
-/** O identificador deve ser o número de série ou uma etiqueta física da loja. */
 public record Equipamento(String descricao, String identificador, String condicaoFisica,
                           String acessorios) implements Serializable {
     public Equipamento {

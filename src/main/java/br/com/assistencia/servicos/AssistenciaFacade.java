@@ -10,10 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-/**
- * Papel no padrão Facade: Facade. Coordena casos de uso, domínio e persistência.
- * Dependências são injetadas pelo construtor; o terminal não altera o repositório.
- */
 public final class AssistenciaFacade {
     private final RepositorioOrdens repositorio;
     private final Clock relogio;

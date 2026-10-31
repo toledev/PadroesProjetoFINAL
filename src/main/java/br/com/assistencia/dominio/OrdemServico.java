@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Papel no padrão State: Context. Preserva as invariantes antes de alterar seu estado. */
 public final class OrdemServico implements Serializable {
     private static final long serialVersionUID = 1L;
     private final long numero;

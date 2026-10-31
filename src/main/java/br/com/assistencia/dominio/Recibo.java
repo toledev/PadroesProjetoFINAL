@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-/** Comprovação interna de pagamento conferido pelo atendente, sem operação bancária. */
 public record Recibo(String referencia, BigDecimal valor, String forma, LocalDate data)
         implements Serializable {
     public Recibo {

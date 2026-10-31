@@ -1,9 +1,5 @@
 package br.com.assistencia.padroes.estado;
 
-/**
- * Papel no padrão State: State e ConcreteStates (corpos específicos das constantes).
- * Cada estado decide quais operações permite. As demais falham por padrão.
- */
 public enum EstadoOrdem {
     RECEBIDA {
         public EstadoOrdem orcar() { return AGUARDANDO_APROVACAO; }

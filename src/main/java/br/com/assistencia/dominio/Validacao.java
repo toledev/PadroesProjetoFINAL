@@ -3,7 +3,6 @@ package br.com.assistencia.dominio;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-/** Validações compartilhadas dos objetos do domínio. */
 public final class Validacao {
     private Validacao() { }
 

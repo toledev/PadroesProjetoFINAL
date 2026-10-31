@@ -4,7 +4,6 @@ import br.com.assistencia.dominio.Validacao;
 import java.math.BigDecimal;
 import java.util.List;
 
-/** Papel no padrão Composite: Composite. Agrupa peças e serviços sem cobrar duas vezes. */
 public record PacoteServicos(String nome, List<ComponenteOrcamento> componentes)
         implements ComponenteOrcamento {
     public PacoteServicos {

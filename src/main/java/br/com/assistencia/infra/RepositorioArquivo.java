@@ -10,10 +10,6 @@ import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Arquivo local versionado. Uma instância por diretório, com trava entre processos.
- * Cada operação carrega objetos novos; só o arquivo substituído com sucesso é confirmado.
- */
 public final class RepositorioArquivo implements RepositorioOrdens, AutoCloseable {
     private final Path arquivo;
     private final FileChannel canal;
@@ -72,7 +68,6 @@ public final class RepositorioArquivo implements RepositorioOrdens, AutoCloseabl
             if (Files.exists(arquivo)) {
                 Files.copy(arquivo, arquivo.resolveSibling("ordens.bak"), StandardCopyOption.REPLACE_EXISTING);
             }
-            // Não faz fallback para gravação não atômica: falhar preserva a versão anterior.
             Files.move(temporario, arquivo, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
         } finally {
             Files.deleteIfExists(temporario);

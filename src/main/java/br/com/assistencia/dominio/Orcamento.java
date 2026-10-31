@@ -8,13 +8,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Papel no padrão Builder: Product. Orçamento imutável após a construção. */
 public final class Orcamento implements Serializable {
     private static final long serialVersionUID = 1L;
     private final String diagnostico;
     private final LocalDate emissao;
     private final LocalDate validade;
-    // List.copyOf produz uma lista serializável quando os elementos são serializáveis.
     @SuppressWarnings("serial")
     private final List<ComponenteOrcamento> itens;
     private final String politica;
@@ -52,7 +50,6 @@ public final class Orcamento implements Serializable {
                 + "\nTotal autorizado em caso de aprovação: R$ " + total.toPlainString() + "\n";
     }
 
-    /** Papel no padrão Builder: ConcreteBuilder. Recebe a Strategy pelo construtor. */
     public static final class Builder {
         private final PoliticaPreco politica;
         private String diagnostico;
