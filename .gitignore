@@ -1,6 +1,9 @@
 target/
 build/
+out/
 .idea/
 *.class
 *.iml
+data/
+tmp/
 
