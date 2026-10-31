@@ -3,6 +3,9 @@ package br.com.assistencia.dominio;
 import java.math.BigDecimal;
 import br.com.assistencia.padroes.orcamento.ComponenteOrcamento;
 
+/**
+ * @note Papel no Padrão: Leaf (Composite)
+ */
 public record ItemOrcamento(String descricao, Tipo tipo, int quantidade, BigDecimal valorUnitario)
         implements ComponenteOrcamento {
     public enum Tipo { PECA, SERVICO }

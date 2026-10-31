@@ -6,6 +6,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @note Papel no Padrão: Context (State)
+ */
 public final class OrdemServico implements Serializable {
     private static final long serialVersionUID = 1L;
     private final long numero;

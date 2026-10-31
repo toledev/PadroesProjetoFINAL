@@ -1,35 +1,47 @@
 package br.com.assistencia.padroes.estado;
 
+/**
+ * @note Papel no Padrão: State (State)
+ */
 public enum EstadoOrdem {
+    /** @note Papel no Padrão: Concrete State (State) */
     RECEBIDA {
         public EstadoOrdem orcar() { return AGUARDANDO_APROVACAO; }
         public EstadoOrdem cancelar() { return CANCELADA; }
     },
+    /** @note Papel no Padrão: Concrete State (State) */
     AGUARDANDO_APROVACAO {
         public EstadoOrdem orcar() { return AGUARDANDO_APROVACAO; }
         public EstadoOrdem aprovar() { return APROVADA; }
         public EstadoOrdem recusar() { return RECUSADA; }
         public EstadoOrdem cancelar() { return CANCELADA; }
     },
+    /** @note Papel no Padrão: Concrete State (State) */
     APROVADA {
         public EstadoOrdem iniciar() { return EM_REPARO; }
         public EstadoOrdem interromper() { return CANCELADA; }
     },
+    /** @note Papel no Padrão: Concrete State (State) */
     EM_REPARO {
         public EstadoOrdem concluir() { return PRONTA; }
         public EstadoOrdem interromper() { return CANCELADA; }
     },
+    /** @note Papel no Padrão: Concrete State (State) */
     PRONTA {
         public EstadoOrdem pagar() { return PRONTA; }
         public EstadoOrdem entregar() { return ENTREGUE; }
     },
+    /** @note Papel no Padrão: Concrete State (State) */
     RECUSADA {
         public EstadoOrdem devolver() { return DEVOLVIDA; }
     },
+    /** @note Papel no Padrão: Concrete State (State) */
     CANCELADA {
         public EstadoOrdem devolver() { return DEVOLVIDA; }
     },
+    /** @note Papel no Padrão: Concrete State (State) */
     ENTREGUE,
+    /** @note Papel no Padrão: Concrete State (State) */
     DEVOLVIDA;
 
     public EstadoOrdem orcar() { throw invalida("orçar/revisar"); }

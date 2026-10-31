@@ -10,6 +10,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
+/**
+ * @note Papel no Padrão: Facade (Facade)
+ */
 public final class AssistenciaFacade {
     private final RepositorioOrdens repositorio;
     private final Clock relogio;

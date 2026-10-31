@@ -1,5 +1,8 @@
 package br.com.assistencia.padroes.exportacao;
 
+/**
+ * @note Papel no Padrão: Concrete Product (Factory Method)
+ */
 public final class DocumentoHtml implements DocumentoOrdem {
     public String extensao() { return ".html"; }
     public String renderizar(String ficha) {

@@ -35,6 +35,10 @@ public final class Main {
         }
     }
 
+    /**
+     * @note Papel no Padrão: Client (Facade)
+     * @note Papel no Padrão: Client (Builder)
+     */
     private static final class Terminal {
         private final AssistenciaFacade assistencia;
         private final Map<Integer, PoliticaPreco> politicas;

@@ -3,6 +3,9 @@ package br.com.assistencia.padroes.preco;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * @note Papel no Padrão: Concrete Strategy (Strategy)
+ */
 public final class DescontoMaoDeObra implements PoliticaPreco {
     public String nome() { return "Campanha: 10% na mão de obra"; }
     public BigDecimal desconto(BigDecimal totalServicos) {

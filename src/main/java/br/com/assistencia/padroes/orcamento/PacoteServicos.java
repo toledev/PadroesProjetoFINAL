@@ -4,6 +4,9 @@ import br.com.assistencia.dominio.Validacao;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * @note Papel no Padrão: Composite (Composite)
+ */
 public record PacoteServicos(String nome, List<ComponenteOrcamento> componentes)
         implements ComponenteOrcamento {
     public PacoteServicos {

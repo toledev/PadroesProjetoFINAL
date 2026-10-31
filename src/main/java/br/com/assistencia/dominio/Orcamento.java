@@ -8,6 +8,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @note Papel no Padrão: Product (Builder)
+ */
 public final class Orcamento implements Serializable {
     private static final long serialVersionUID = 1L;
     private final String diagnostico;
@@ -50,6 +53,10 @@ public final class Orcamento implements Serializable {
                 + "\nTotal autorizado em caso de aprovação: R$ " + total.toPlainString() + "\n";
     }
 
+    /**
+     * @note Papel no Padrão: Concrete Builder (Builder)
+     * @note Papel no Padrão: Context (Strategy)
+     */
     public static final class Builder {
         private final PoliticaPreco politica;
         private String diagnostico;

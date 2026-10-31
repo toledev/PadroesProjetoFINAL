@@ -6,7 +6,13 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.UUID;
 
+/**
+ * @note Papel no Padrão: Creator (Factory Method)
+ */
 public abstract class ExportadorOrdem {
+    /**
+     * @note Papel no Padrão: Factory Method
+     */
     protected abstract DocumentoOrdem criarDocumento();
 
     public final Path exportar(OrdemServico ordem, Path diretorio) throws IOException {
